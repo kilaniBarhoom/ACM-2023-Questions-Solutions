@@ -26,12 +26,12 @@ int main() {
     }
 
     for(int i = 0; i < N - 1; i++){
-        pref[i + 1] = ((v[i] - 2) <= 0? 0: v[i] - 2) + pref[i];
+        pref[i + 1] = max(0, v[i] - 2) + pref[i];
     }
 
 
     for(int i = N - 1; i > 0; i--){
-        suf[i - 1] = ((v[i] - 3) <= 0? 0: v[i] - 3) + suf[i];
+        suf[i - 1] = max(0, v[i] - 3) + suf[i];
     }
 
     ll maxPower = INT_MIN;
